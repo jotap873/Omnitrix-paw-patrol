@@ -22,7 +22,7 @@ docs/     Documentación
 
 ## Cómo ejecutarla
 
-Requisitos: Node.js 22 o superior.
+Requisitos: Node.js 22.13 o superior (recomendado: la versión LTS de nodejs.org). No hace falta instalar Python ni otras herramientas.
 
 ```bash
 npm install          # instala todo

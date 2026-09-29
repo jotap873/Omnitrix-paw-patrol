@@ -23,7 +23,7 @@ neurodivergentes (TEA, TPS) en aulas PIE, usando una pulsera con sensores
 |------|------------|---------|
 | **Frontend** | React + Vite, instalable como PWA | Una sola base de código que corre en tablet, celular o notebook. Chrome (Android/PC) soporta **Web Bluetooth**, así que la app puede hablar directo con la pulsera sin publicar una app nativa. |
 | **Backend** | Node.js + Express | Simple, mismo lenguaje que el frontend, buen soporte de WebSocket para tiempo real. |
-| **Base de datos** | SQLite (prototipo) → PostgreSQL (producción) | SQLite no requiere instalar nada; el esquema es SQL estándar y se migra a PostgreSQL cuando haya varias escuelas. |
+| **Base de datos** | SQLite incluido en Node.js (`node:sqlite`, prototipo) → PostgreSQL (producción) | SQLite no requiere instalar nada; el esquema es SQL estándar y se migra a PostgreSQL cuando haya varias escuelas. |
 | **Hardware** | Microcontrolador con BLE y WiFi (ej. ESP32-S3 o nRF52840) | Calcula HR y RMSSD a bordo y envía valores ya procesados (menos datos y menos batería). |
 
 ## Conexión de la pulsera

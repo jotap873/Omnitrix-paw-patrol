@@ -2,6 +2,7 @@
 //   Usuario: docente   Contraseña: demo1234
 import { openDb } from './db.js';
 import { hashPassword } from './auth.js';
+import { pathToFileURL } from 'node:url';
 
 export function seed(db) {
   if (db.prepare('SELECT 1 FROM teachers WHERE username = ?').get('docente')) {
@@ -40,7 +41,8 @@ export function seed(db) {
   return true;
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+// Se ejecuta solo al llamarlo directamente (npm run seed), también en Windows.
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
   const created = seed(openDb());
   console.log(created ? 'Datos de demo creados. Usuario: docente / demo1234' : 'Los datos de demo ya existían.');
 }
